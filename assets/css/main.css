@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Adamina:regular|Alex+Brush:regular|Great+Vibes:regular|Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Satisfy:regular|Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext&display=swap');
+
+@font-face {
+    font-family: "amsterdam-three-slant";
+    src: url('../fonts/amsterdam-three-slant.ttf');
+}
+
+@font-face {
+    font-family: "edwardian-itc";
+    src: url('../fonts/Edwardian-ITC.ttf');
+}
+
+@font-face {
+    font-family: "trajan-pro";
+    src: url('../fonts/Trajan-Pro.ttf');
+}
+
+@font-face {
+    font-family: "alex-brush";
+    src: url('../fonts/alex-brush.woff2');
+}
+
+.main {
+    background-color: #f2e9ed;
+    color: #666;
+    font-size: 14px;
+}
+
+.front-bg {
+    background-image: url('../img/front-bg.jpg');
+    background-position: top center;
+    background-repeat: repeat;
+    background-size: cover;
+    height: 50rem;
+    color: #84796d;
+}
+
+.secondary-bg {
+    background-image: url('../img/bg-2-1.jpg');
+    background-position: top center;
+    background-repeat: repeat;
+    color: #84796d;
+}
+
+.secondary-bg.bottom-bg {
+    background-position: bottom center;
+}
+
+.img-bg-btm {
+    background-image: url('../img/img-bg-btm.svg');
+    background-size: 100% 125px;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 125px;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+
+.img-bg-top {
+    background-image: url('../img/img-bg-top.svg');
+    background-size: 100% 125px;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 125px;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.divider {
+    border-top-width: 4px;
+    border-top-style: double;
+    border-top-color: rgba(193,155,60,0.5);
+}
+
+.circle {
+    color: #ffffff;
+    background-color: #bc9fce;
+    border-radius: 100%;
+    width: 6rem;
+    height: 6rem;
+    opacity: 0.7;
+}
+
+.circle:hover {
+    opacity: 1;
+}
+
+.circle svg {
+    height: 3rem;
+    width: 3rem;
+}
+
+.filter {
+    filter: hue-rotate(130deg) saturate(147%) brightness(66%) contrast(99%) !important;
+}
+
+.filter-2 {
+    filter: saturate(0%) brightness(6%) contrast(89%) invert(60%) sepia(100%) !important;
+}
+
+.countdown {
+    border-width: 4px 0px;
+    border-color: #e5bdae;
+}
+
+.adamina {
+    font-family: 'Adamina', Georgia, "Times New Roman", serif;
+}
+
+.amsterdam {
+    font-family: 'amsterdam-three-slant', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.alex-brush {
+    font-family: 'Alex Brush', handwriting;
+}
+
+.georgia {
+    font-family: 'Georgia', Georgia, "Times New Roman", serif;
+}
+
+.trajan {
+    font-family: 'trajan-pro', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.edwardian {
+    font-family: 'edwardian-itc',Helvetica,Arial,Lucida,sans-serif;
+}
+
+.montserrat {
+    font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.times {
+    font-family: 'Times New Roman', Georgia, "Times New Roman", serif;
+}

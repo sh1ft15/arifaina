@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ArifAina</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main max-w-[500px] mx-auto w-full shadow-lg lg:overflow-hidden">
+            <div class="front-bg flex items-center justify-center relative">
+                <div class="absolute h-full" id="particles-js"></div>
+                <div class="text-center h-[60%]">
+                    <p class="adamina tracking-[4px] mb-16">WALIMATUL URUS</p>
+                    <p class="text-5xl text-left amsterdam">{groom_alias}</p>
+                    <p class="text-5xl text-[#bc9fce] alex-brush my-6">&amp;</p>
+                    <p class="text-5xl text-right amsterdam">{bride_alias}</p>
+                    <p class="adamina tracking-[4px] mt-14"><span>{day}</span> | <span>{date}</span></p>
+                </div>
+                <div class="img-bg-btm"></div>
+            </div>
+            <div class="flex flex-col items-center justify-center items-center text-center relative py-7 px-3">
+                <div class="mt-16"><img src="assets/img/bismillah.png"></div>
+
+                <p class="georgia text-base italic my-10">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+
+                <div class="trajan text-base font-semibold">
+                    <p>{father_name}</p>
+                    <p>&</p>
+                    <p>{mother_name}</p>
+                </div>
+                
+                <p class="georgia leading-[1.7rem] my-10">
+                    Dengan segala hormatnya menjemput<br> 
+                    Tan Sri/ Puan Sri/ Dato Sri/ Datuk Sri/<br> 
+                    Datuk/ Datin/ Tuan/ Puan/ Encik/ Cik<br> 
+                    ke majlis resepsi perkahwinan </p>
+                </p>
+
+                <div class="edwardian text-4xl mb-10">
+                    <p>{groom_name}</p>
+                    <p>&</p>
+                    <p>{bride_name}</p>
+                </div>
+            </div>
+            <div class="secondary-bg flex items-center justify-center relative">
+                <div class="img-bg-top"></div>
+                <div class="w-[80%] bg-white text-black shadow-lg text-center px-5 my-36">
+                    <div class="trajan text-center pb-14 pt-20">
+                        <h1 class="text-xl font-semibold mb-2">{date}</h1>
+                        <p class="text-base">{muslim_date}</p>
+                        <p class="text-base">{day}</p>
+                    </div>
+                    <div class="divider py-14 trajan text-center">
+                        <h1 class="text-xl font-semibold mb-2">{venue}</h1>
+                        <p class="text-base">{address}</p>
+                    </div>
+                    <div class="divider py-14 trajan text-center">
+                        <h1 class="text-xl font-semibold mb-2">ATURCARA</h1>
+                        <div class="my-3">
+                            <p class="font-semibold">11.30 AM - 3.00 PM</p>
+                            <p>Jamuan Makan</p>
+                        </div>
+                        <div class="my-3">
+                            <p class="font-semibold">12.30 PM</p>
+                            <p>Ketibaan Pengantin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-bg-btm"></div>
+            </div>
+            <div class="flex flex-col items-center justify-center items-center text-center relative py-7 px-3">
+                <div class="mt-14 w-[70%]">
+                    <img src="assets/img/flower5.gif">
+                </div>
+
+                <div class="flex flex-col justify-center items-center mt-10 mb-5">
+                    <a class="circle flex justify-center items-center" href="#" target="_blank">
+                        <i data-feather="map-pin"></i>
+                    </a>
+                    <div class="montserrat px-5 mt-5">
+                        <h4 class="text-xl font-semibold uppercase mb-2">Waze</h4>
+                        <p>Ke Lokasi Majlis</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center items-center my-5">
+                    <a class="circle flex justify-center items-center" href="#" target="_blank">
+                        <i data-feather="map"></i>
+                    </a>
+                    <div class="montserrat px-5 mt-5">
+                        <h4 class="text-xl font-semibold uppercase mb-2">Google Maps</h4>
+                        <p>Ke Lokasi Majlis</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center items-center mt-5 mb-10">
+                    <a class="circle flex justify-center items-center" href="#" target="_blank">
+                        <i data-feather="map"></i>
+                    </a>
+                    <div class="montserrat px-5 mt-5">
+                        <h4 class="text-xl font-semibold uppercase mb-2">#ArifAina</h4>
+                        <p>Kongsi kenangan indah di hari bahagia kami</p>
+                    </div>
+                </div>
+            </div>
+            <div class="secondary-bg flex flex-col items-center justify-center items-center text-center relative">
+                <div class="img-bg-top"></div>
+                <div class="flex flex-col justify-center items-center w-[80%] my-56 text-[#58595b]">
+                    <div class="mt-14 w-[60%]">
+                        <img class="filter" src="assets/img/save_the_date.gif">
+                    </div>
+                    <div class="countdown w-full py-5 my-10">
+                        <h4 class="trajan text-md uppercase font-semibold mb-5">Detik Majlis Bermula</h4>
+                        <div class="trajan flex justify-around">
+                            <div>
+                                <p id="ctd-day" class="text-4xl font-semibold mb-2">00</p>
+                                <p class="text-xs">Day(s)</p>
+                            </div>
+                            <div>
+                                <p id="ctd-hour" class="text-4xl font-semibold mb-2">00</p>
+                                <p class="text-xs">Hour(s)</p>
+                            </div>
+                            <div>
+                                <p id="ctd-minute" class="text-4xl font-semibold mb-2">00</p>
+                                <p class="text-xs">Minute(s)</p>
+                            </div>
+                            <div>
+                                <p id="ctd-second" class="text-4xl font-semibold mb-2">00</p>
+                                <p class="text-xs">Second(s)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trajan">
+                        <p class="font-semibold mb-2">“Dan Kami jadikan kamu<br>berpasang-pasangan”</p>
+                        <p>Al Qur’an [78:8]</p>
+                    </div>
+                </div>
+                <div class="img-bg-btm"></div>
+            </div>
+            <div class="flex flex-col items-center justify-center items-center text-center relative py-7 px-3">
+                <div class="mt-14 w-[70%]">
+                    <p class="trajan text-3xl uppercase">Hubungi</p>
+                </div>
+
+                <div class="flex flex-col justify-center items-center w-full my-10">
+                    <div class="montserrat px-5 my-5 w-[70%]">
+                        <h4 class="text-base font-semibold uppercase mb-4">{cp_name_1}</h4>
+                        <div class="flex justify-center gap-2">
+                            <a data-phone="{cp_phone_1}" href="#" class="bg-[#bc9fce] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="phone"></i> 
+                                    <span>Call</span>
+                                </div>
+                            </a>
+                            <a data-whatsapp="{cp_phone_1}" href="#" class="bg-[#25d366] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="message-circle"></i> 
+                                    <span>Whatsapp</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="montserrat px-5 my-5 w-[70%]">
+                        <h4 class="text-base font-semibold uppercase mb-4">{cp_name_2}</h4>
+                        <div class="flex justify-center gap-2">
+                            <a data-phone="{cp_phone_2}" href="#" class="bg-[#bc9fce] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="phone"></i> 
+                                    <span>Call</span>
+                                </div>
+                            </a>
+                            <a data-whatsapp="{cp_phone_2}" href="#" class="bg-[#25d366] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="message-circle"></i> 
+                                    <span>Whatsapp</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="montserrat px-5 my-5 w-[70%]">
+                        <h4 class="text-base font-semibold uppercase mb-4">{cp_name_3}</h4>
+                        <div class="flex justify-center gap-2">
+                            <a data-phone="{cp_phone_3}" href="#" class="bg-[#bc9fce] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="phone"></i> 
+                                    <span>Call</span>
+                                </div>
+                            </a>
+                            <a data-whatsapp="{cp_phone_3}" href="#" class="bg-[#25d366] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="message-circle"></i> 
+                                    <span>Whatsapp</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="montserrat px-5 my-5 w-[70%]">
+                        <h4 class="text-base font-semibold uppercase mb-4">{cp_name_4}</h4>
+                        <div class="flex justify-center gap-2">
+                            <a data-phone="{cp_phone_4}" href="#" class="bg-[#bc9fce] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="phone"></i> 
+                                    <span>Call</span>
+                                </div>
+                            </a>
+                            <a data-whatsapp="{cp_phone_4}" href="#" class="bg-[#25d366] p-3 text-white rounded uppercase shadow-md opacity-70 hover:opacity-100" target="_blank">
+                                <div class="flex justify-around gap-2">
+                                    <i data-feather="message-circle"></i> 
+                                    <span>Whatsapp</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondary-bg bottom-bg flex flex-col items-center justify-center items-center relative">
+                <div class="img-bg-top"></div>
+                <div class="flex flex-col justify-center items-center w-[80%] bg-white text-black shadow-lg px-5 my-36">
+                    <div class="my-10 w-[50%]"><img src="assets/img/rsvp.gif"></div>
+                </div>
+                <div class="img-bg-btm"></div>
+            </div>
+            <div class="flex flex-col items-center justify-center items-center text-center relative py-7 px-3">
+                <div class="mt-14 w-[70%]">
+                    <img class="filter-2" src="assets/img/thnyou.gif">
+                </div>
+
+                <div class="flex flex-col justify-center items-center mt-10 mb-5">
+                    <div class="times px-5 mt-5">
+                        <p class="text-xs uppercase font-semibold tracking-[.1em] mb-5">Exclusively made by</p>
+                        <h4 class="trajan text-xl uppercase tracking-[.3em] my-5">Sharifuddin</h4>
+                        <a href="https://twitter.com/SharifuddinOmar" class="block bg-[#bc9fce] text-white tracking-[.2em] uppercase px-4 py-2 my-5" target="_blank">
+                            twitter.com/SharifuddinOmar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script type="module" src="assets/js/main.js"></script>
+    </body>
+</html>
