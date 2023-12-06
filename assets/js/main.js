@@ -1,5 +1,6 @@
 import getCountDown from './countdown.js';
 import initParticles from './particle.js';
+import './message.js';
 
 let ctd_date = new Date("April 20, 2024 00:00:00").getTime(),
     ctd_day = document.getElementById("ctd-day"),
@@ -12,7 +13,6 @@ function getElement(search) {
         { return dom.children.length === 0 && dom.textContent.includes('{'+ search +'}'); }
     );
 }
-
 
 fetch('assets/json/main.json')
 .then(response => response.json())

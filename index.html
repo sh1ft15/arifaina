@@ -43,9 +43,9 @@
                 </p>
 
                 <div data-aos="zoom-in" data-aos-duration="2000" class="edwardian text-4xl mb-10">
-                    <p>{groom_name}</p>
-                    <p>&</p>
                     <p>{bride_name}</p>
+                    <p>&</p>
+                    <p>{groom_name}</p>
                 </div>
             </div>
             <div class="secondary-bg flex items-center justify-center relative">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div data-aos="fade-down" data-aos-duration="2000" class="flex flex-col justify-center items-center mt-10 mb-5">
-                    <a class="circle flex justify-center items-center" href="#" target="_blank">
+                    <a class="circle flex justify-center items-center" href="https://ul.waze.com/ul?preview_venue_id=67174433.671482185.9654581&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
                         <i data-feather="map-pin"></i>
                     </a>
                     <div class="montserrat px-5 mt-5">
@@ -92,7 +92,7 @@
                 </div>
 
                 <div data-aos="fade-down" data-aos-duration="2000" class="flex flex-col justify-center items-center my-5">
-                    <a class="circle flex justify-center items-center" href="#" target="_blank">
+                    <a class="circle flex justify-center items-center" href="https://maps.app.goo.gl/iCiKiB5jeYxx1RuS9" target="_blank">
                         <i data-feather="map"></i>
                     </a>
                     <div class="montserrat px-5 mt-5">
@@ -139,8 +139,11 @@
                         </div>
                     </div>
                     <div data-aos="fade-up" data-aos-duration="2000" class="trajan">
-                        <p class="font-semibold mb-2">“Dan Kami jadikan kamu<br>berpasang-pasangan”</p>
-                        <p>Al Qur’an [78:8]</p>
+                        <p class="text-xl font-semibold mb-3">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
+                        <p>
+                            “Ya Allah, berkatilah majlis ini, limpahkanlah baraqah dan rahmat kepada kedua mempelai ini. Kurniakanlah mereka zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka
+                            di dunia dan di akhirat dan sempurnakanlah agama mereka dengan berkat ikatan ini.”
+                        </p>
                     </div>
                 </div>
                 <div class="img-bg-btm"></div>
@@ -223,8 +226,27 @@
             </div>
             <div class="secondary-bg bottom-bg flex flex-col items-center justify-center items-center relative">
                 <div class="img-bg-top"></div>
-                <div class="flex flex-col justify-center items-center w-[80%] bg-white text-black shadow-lg px-5 my-36">
-                    <div class="my-10 w-[50%]"><img src="assets/img/rsvp.gif"></div>
+                <div data-aos="zoom-in" data-aos-duration="1000" class="w-[80%] bg-white shadow-lg text-center px-5 my-36">
+                    <div data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="500" class="trajan text-center pb-14 pt-16">
+                        <h1 class="text-3xl font-semibold mb-6">Ucapan</h1>
+
+                        <div id="msg_list" class="flex overflow-hidden scroll-smoth h-72 border-y rounded">
+                            <div class="flex flex-[0_0_100%] justify-center items-center h-full w-full">
+                                <div>
+                                    <p class="text-base text-black font-semibold mb-2">“<span class="message">test</span>”</p>
+                                    <p class="text-sm">-<span class="author">Author</span>-</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="msg_pages" class="flex justify-center items-center p-3"></div>
+
+                        <div class="mt-10">
+                            <button id="msg_btn" class="border bg-[#6c757d] text-white rounded opacity-80 hover:opacity-100 py-2 px-3">
+                                <i class="inline" data-feather="send"></i> Hantar Ucapan
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="img-bg-btm"></div>
             </div>
@@ -243,8 +265,37 @@
                     </div>
                 </div>
             </div>
-        </div>
 
+            <div id="msg_dialog" class="fixed top-0 bottom-0 flex justify-center overflow-hidden max-w-[500px] w-full z-50" style="display: none;">
+                <div class="bg-black opacity-50 absolute h-full w-full top-0"></div>
+                <div class="flex justify-center items-center relative w-[80%] h-full">
+                    <div class="bg-white w-full shadow-lg rounded">
+                        <div class="text-base font-semibold uppercase p-4 border-b">Hantar Ucapan</div>
+                        <div class="p-4">
+                            <div class="mb-2">
+                                <label class="block mb-2">Nama</label>
+                                <input type="text" class="w-full border p-2" placeholder="Nama anda di sini"/>
+                            </div>
+                            <div class="mb-2">
+                                <label class="block mb-2">Ucapan</label>
+                                <textarea class="w-full border p-2" rows="5" placeholder="Ucapan anda di sini"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-base font-semibold uppercase p-4 border-t">
+                            <div class="flex justify-end">
+                                <button class="submit border bg-[#198754] text-white rounded opacity-80 hover:opacity-100 py-2 px-3 mr-1">
+                                    <i class="inline" data-feather="send"></i> Hantar
+                                </button>
+                                <button class="cancel border bg-[#6c757d] text-white rounded opacity-80 hover:opacity-100 py-2 px-3">
+                                    <i class="inline" data-feather="x"></i> Batal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script type="module" src="assets/js/main.js"></script>
     </body>
