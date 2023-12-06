@@ -48,6 +48,7 @@ function updateMessages() {
         let index = 0;
     
         cur_page = index;
+        msg_list.scrollLeft = 0;
         msg_list.innerHTML = '';
     
         docs.forEach((doc) => {
