@@ -12,6 +12,14 @@ let msg_btn = document.getElementById("msg_btn"),
 
 updateMessages();
 
+// msg_list.addEventListener('click', () => {
+//     let width = msg_list.firstElementChild.clientWidth,
+//         new_page = parseInt((cur_page ?? 0) + 1);
+
+//     msg_list.scrollLeft = width * new_page;
+//     cur_page = new_page;
+// });
+
 msg_btn.addEventListener('click', () => { toggleDialog(true); });
 
 msg_dialog.querySelector('.cancel').addEventListener('click', () => { toggleDialog(false); });
