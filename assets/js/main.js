@@ -92,6 +92,15 @@ let audio_player = {
 audio_player.init();
 
 // preload
+let reanimates = document.querySelectorAll('.re-animate');
+
+document.addEventListener("DOMContentLoaded", () => {
+    reanimates.forEach(div => { 
+        div.classList.add('opacity-0');
+        div.classList.remove('aos-animate'); 
+    });
+});
+
 document.getElementById('init-card').addEventListener('click', () => {
     let player = document.querySelector('.audio-player'),
         preload = document.querySelector('.preload'),
@@ -104,6 +113,13 @@ document.getElementById('init-card').addEventListener('click', () => {
         player.classList.remove('opacity-0'); 
         main.classList.remove('blur-sm'); 
 
+        reanimates.forEach(div => { 
+            div.classList.remove('opacity-0');
+            div.classList.add('aos-animate'); 
+        });
+
+        AOS.refresh();
+
         // ini audio
         audio_player.play();
         audio_player.play_btn.addEventListener('click', () => { audio_player.play(); });
@@ -113,7 +129,6 @@ document.getElementById('init-card').addEventListener('click', () => {
 
 // reset scroll
 window.onbeforeunload = () => { window.scrollTo(0, 0); }
-
 
 function getElement(search) {
     return Array.from(document.querySelectorAll('*')).filter((dom) => 
