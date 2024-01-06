@@ -118,8 +118,6 @@ document.getElementById('init-card').addEventListener('click', () => {
             div.classList.add('aos-animate'); 
         });
 
-        AOS.refresh();
-
         // ini audio
         audio_player.play();
         audio_player.play_btn.addEventListener('click', () => { audio_player.play(); });
