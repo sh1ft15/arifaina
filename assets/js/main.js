@@ -80,8 +80,6 @@ let audio_player = {
             url: 'assets/audio/soundmanager2.swf',
             onready: function() {
                 audio_player.sound = soundManager.createSound({url: 'assets/audio/Irama-klasik-melayu.mp3', volume: 50});
-                audio_player.play_btn.addEventListener('click', () => { audio_player.play(); });
-                audio_player.pause_btn.addEventListener('click', () => { audio_player.pause(); });
             },
             // restart on finish
             onfinish: () => { if (audio_player.sound) { audio_player.sound.play(); } },
@@ -105,7 +103,11 @@ document.getElementById('init-card').addEventListener('click', () => {
 
         player.classList.remove('opacity-0'); 
         main.classList.remove('blur-sm'); 
+
+        // ini audio
         audio_player.play();
+        audio_player.play_btn.addEventListener('click', () => { audio_player.play(); });
+        audio_player.pause_btn.addEventListener('click', () => { audio_player.pause(); });
     }
 });
 
