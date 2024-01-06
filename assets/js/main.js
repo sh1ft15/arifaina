@@ -96,7 +96,6 @@ let reanimates = document.querySelectorAll('.re-animate');
 
 document.addEventListener("DOMContentLoaded", () => {
     reanimates.forEach(div => { 
-        div.classList.add('opacity-0');
         div.classList.remove('aos-animate'); 
     });
 });
@@ -114,7 +113,6 @@ document.getElementById('init-card').addEventListener('click', () => {
         main.classList.remove('blur-sm'); 
 
         reanimates.forEach(div => { 
-            div.classList.remove('opacity-0');
             div.classList.add('aos-animate'); 
         });
 

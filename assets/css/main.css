@@ -20,6 +20,10 @@
     src: url('../fonts/alex-brush.woff2');
 }
 
+:root {
+    color-scheme: only light;
+}
+
 .main {
     background-color: #f2e9ed;
     color: #666;
@@ -29,6 +33,10 @@
 .preload {
     color: #666;
     font-size: 14px;
+}
+
+.preload > div {
+    background-color: #f2e9ed80;
 }
 
 .front-bg {
