@@ -7,12 +7,31 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/feather-icons"></script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/V2.97a.20170601/script/soundmanager2-nodebug.min.js" 
+            integrity="sha512-Ktf3gwSHtflOAOkTgFozjW2eyAsPv89jBdqp2H1rJ8a0Ew+qWsM1dWjm5KjksEL0dfELCGv8JKFS4tAqBArW/A==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="assets/css/main.css">
         <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <div class="main max-w-[500px] mx-auto w-full shadow-lg lg:overflow-hidden">
+    <body style="overflow:hidden; opacity: 0;">
+        <div class="preload max-w-[500px] mx-auto w-full">
+            <div class="fixed flex items-center justify-center top-0 bottom-0 max-w-[500px] w-full z-[10000]">
+                <div class="text-center h-[67%]">
+                    <p class="trajan tracking-[4px] mb-16">WALIMATUL URUS</p>
+                    <p data-aos="fade-right" data-aos-duration="3000" class="text-5xl text-left amsterdam">{groom_alias}</p>
+                    <p class="text-5xl text-[#bc9fce] alex-brush my-6">&amp;</p>
+                    <p data-aos="fade-left" data-aos-duration="3000" class="text-5xl text-right amsterdam">{bride_alias}</p>
+                    <p data-aos="fade-up" data-aos-duration="2000" class="adamina tracking-[4px] mt-14"><span>{day}</span> | <span>{date}</span></p>
+                    <button id="init-card" class="bg-[#6d28d9] rounded-lg text-white trajan py-3 px-5 mt-20 cursor-pointer">BUKA</button>
+                </div>
+            </div>
+        </div>
+        <div class="audio-player fixed z-[1000] left-3 top-3 opacity-0">
+            <img id="audio-play" class="w-[50px] cursor-pointer" src="assets/img/play-button.png">
+            <img id="audio-pause" class="w-[50px] cursor-pointer" src="assets/img/pause-button.png" style="display:none">
+        </div>
+        <div class="main max-w-[500px] mx-auto w-full shadow-lg lg:overflow-hidden blur-sm">
             <div class="front-bg flex items-center justify-center relative">
                 <div class="absolute h-full" id="particles-js"></div>
                 <div class="text-center h-[60%]">
@@ -270,7 +289,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="msg_dialog" class="fixed top-0 bottom-0 flex justify-center overflow-hidden max-w-[500px] w-full z-50" style="display: none;">
                 <div class="bg-black opacity-50 absolute h-full w-full top-0"></div>
                 <div class="flex justify-center items-center relative w-[80%] h-full">

@@ -26,6 +26,11 @@
     font-size: 14px;
 }
 
+.preload {
+    color: #666;
+    font-size: 14px;
+}
+
 .front-bg {
     background-image: url('../img/front-bg.jpg');
     background-position: top center;
@@ -103,6 +108,10 @@
 .countdown {
     border-width: 4px 0px;
     border-color: #e5bdae;
+}
+
+.audio-player {
+    filter: hue-rotate(73deg) saturate(44%) brightness(142%) contrast(53%) sepia(96%);
 }
 
 .adamina {

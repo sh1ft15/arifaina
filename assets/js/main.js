@@ -2,21 +2,12 @@ import getCountDown from './countdown.js';
 import initParticles from './particle.js';
 import './message.js';
 
-let ctd_date = new Date("April 20, 2024 00:00:00").getTime(),
-    ctd_day = document.getElementById("ctd-day"),
-    ctd_hour = document.getElementById("ctd-hour"),
-    ctd_min = document.getElementById("ctd-minute"),
-    ctd_sec = document.getElementById("ctd-second");
-
-function getElement(search) {
-    return Array.from(document.querySelectorAll('*')).filter((dom) => 
-        { return dom.children.length === 0 && dom.textContent.includes('{'+ search +'}'); }
-    );
-}
-
+// init
 fetch('assets/json/main.json')
 .then(response => response.json())
 .then(json => {
+    document.body.style.opacity = '';
+    
     for(const key in json) {
         if (key.includes("cp_phone")) {
             document.querySelectorAll('a[data-phone="{'+ key +'}"]').forEach(phone => { 
@@ -40,14 +31,90 @@ AOS.init();
 feather.replace();
 initParticles("#cfae85");
 
-let ctd = setInterval(function() {
-    let timer = getCountDown(ctd_date);
+// countdown
+let countdown = {
+    date: new Date("April 20, 2024 00:00:00").getTime(),
+    day: document.getElementById("ctd-day"),
+    hour: document.getElementById("ctd-hour"),
+    min: document.getElementById("ctd-minute"),
+    sec: document.getElementById("ctd-second"),
+    instance: null,
+    init () {
+        if (countdown.date) {
+            let timer = getCountDown(countdown.date);
 
-    if (timer) {
-        ctd_day.innerText = timer.days;
-        ctd_hour.innerText = timer.hours;
-        ctd_min.innerText = timer.minutes;
-        ctd_sec.innerText = timer.seconds;
+            if (timer) {
+                countdown.day.innerText = timer.days;
+                countdown.hour.innerText = timer.hours;
+                countdown.min.innerText = timer.minutes;
+                countdown.sec.innerText = timer.seconds;
+            }
+            else if (countdown.instance) { 
+                clearInterval(countdown.instance); 
+            }
+        }
     }
-    else { clearInterval(ctd); }
-}, 1000);
+};
+
+countdown.instance = setInterval(countdown.init, 1000);
+
+// audio
+let audio_player = {
+    play_btn: document.getElementById('audio-play'),
+    pause_btn: document.getElementById('audio-pause'),
+    sound: null,
+    play () {
+        audio_player.play_btn.style.display = 'none';
+        audio_player.pause_btn.style.display = '';
+
+        if (audio_player.sound) { audio_player.sound.play(); }
+    },
+    pause () {
+        audio_player.play_btn.style.display = '';
+        audio_player.pause_btn.style.display = 'none';
+
+        if (audio_player.sound) { audio_player.sound.pause(); }
+    },
+    init () {
+        soundManager.setup({
+            url: 'assets/audio/soundmanager2.swf',
+            onready: function() {
+                audio_player.sound = soundManager.createSound({url: 'assets/audio/Irama-klasik-melayu.mp3', volume: 50});
+                audio_player.play_btn.addEventListener('click', () => { audio_player.play(); });
+                audio_player.pause_btn.addEventListener('click', () => { audio_player.pause(); });
+            },
+            // restart on finish
+            onfinish: () => { if (audio_player.sound) { audio_player.sound.play(); } },
+            // prompt on error
+            ontimeout: () => { console.log("Failed to play audio"); }
+        });
+    }
+};
+
+audio_player.init();
+
+// preload
+document.getElementById('init-card').addEventListener('click', () => {
+    let player = document.querySelector('.audio-player'),
+        preload = document.querySelector('.preload'),
+        main = document.querySelector('.main');
+
+    if (player && preload && main) {
+        document.body.style.overflow = 'auto';
+        preload.style.display = 'none';
+
+        player.classList.remove('opacity-0'); 
+        main.classList.remove('blur-sm'); 
+        audio_player.play();
+    }
+});
+
+// reset scroll
+window.onbeforeunload = () => { window.scrollTo(0, 0); }
+
+
+function getElement(search) {
+    return Array.from(document.querySelectorAll('*')).filter((dom) => 
+        { return dom.children.length === 0 && dom.textContent.includes('{'+ search +'}'); }
+    );
+}
