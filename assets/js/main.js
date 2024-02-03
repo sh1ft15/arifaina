@@ -78,11 +78,14 @@ let audio_player = {
     init () {
         soundManager.setup({
             url: 'assets/audio/soundmanager2.swf',
+            flashVersion: 9,
             onready: function() {
                 audio_player.sound = soundManager.createSound({url: 'assets/audio/arifaina.mp4', volume: 80});
             },
             // restart on finish
-            onfinish: () => { if (audio_player.sound) { audio_player.sound.play(); } },
+            onfinish: () => { 
+                if (audio_player.sound) { audio_player.sound.play(); } 
+            },
             // prompt on error
             ontimeout: () => { console.log("Failed to play audio"); }
         });
