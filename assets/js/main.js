@@ -79,7 +79,7 @@ let audio_player = {
         soundManager.setup({
             url: 'assets/audio/soundmanager2.swf',
             onready: function() {
-                audio_player.sound = soundManager.createSound({url: 'assets/audio/Irama-klasik-melayu.mp3', volume: 50});
+                audio_player.sound = soundManager.createSound({url: 'assets/audio/arifaina.mp4', volume: 80});
             },
             // restart on finish
             onfinish: () => { if (audio_player.sound) { audio_player.sound.play(); } },

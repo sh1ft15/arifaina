@@ -6,6 +6,8 @@ let msg_btn = document.getElementById("msg_btn"),
     msg_dialog = document.getElementById("msg_dialog"),
     msg_list = document.getElementById("msg_list"),
     msg_pages = document.getElementById("msg_pages"),
+    msg_prev = document.getElementById("msg_prev"),
+    msg_next = document.getElementById("msg_next"),
     msg_item_ref = msg_list.firstElementChild.cloneNode(true),
     icons = window.feather.icons,
     cur_page;
@@ -21,6 +23,10 @@ updateMessages();
 // });
 
 msg_btn.addEventListener('click', () => { toggleDialog(true); });
+
+msg_next.addEventListener('click', () => { iteratePage(cur_page + 1); });
+
+msg_prev.addEventListener('click', () => { iteratePage(cur_page - 1); });
 
 msg_dialog.querySelector('.cancel').addEventListener('click', () => { toggleDialog(false); });
 
@@ -38,18 +44,25 @@ msg_dialog.querySelector('.submit').addEventListener('click', () => {
 msg_pages.addEventListener('click', (e) => {
     if (e.target.closest('div[data-page]')) {
         let page = e.target.closest('div[data-page]'),
-            width = msg_list.firstElementChild.clientWidth,
             new_page = parseInt(page.dataset.page);
 
-        if (cur_page !== new_page) {
-            updatePage(cur_page, false);
-            updatePage(new_page, true);
-
-            msg_list.scrollLeft = width * new_page;
-            cur_page = new_page;
-        }
+        iteratePage(new_page);
     }
 });
+
+function iteratePage(next_page) {
+    let limit = msg_list.children.length - 1;
+
+    if (cur_page != next_page && (next_page >= 0 && next_page <= limit)) {
+        let width = msg_list.firstElementChild.clientWidth;
+
+        updatePage(cur_page, false);
+        updatePage(next_page, true);
+
+        msg_list.scrollLeft = width * next_page;
+        cur_page = next_page;
+    }
+}
 
 function updateMessages() {
     fetch(10).then((docs) => {
@@ -58,12 +71,14 @@ function updateMessages() {
         cur_page = index;
         msg_list.scrollLeft = 0;
         msg_list.innerHTML = '';
-    
-        docs.forEach((doc) => {
-            msg_list.append(createMessage(doc.data()));
-            updatePage(index, index === 0);
-            index += 1;
-        });
+
+        if (docs.size > 0) {
+            docs.forEach((doc) => {
+                msg_list.append(createMessage(doc.data()));
+                updatePage(index, index === 0);
+                index += 1;
+            });
+        }
     });
 }
 
