@@ -67,7 +67,10 @@ let audio_player = {
         audio_player.play_btn.style.display = 'none';
         audio_player.pause_btn.style.display = '';
 
-        if (audio_player.sound) { audio_player.sound.play(); }
+        if (audio_player.sound) { 
+            // restart on finish
+            audio_player.sound.play({ onfinish: () => { audio_player.play(); } }); 
+        }
     },
     pause () {
         audio_player.play_btn.style.display = '';
@@ -81,10 +84,6 @@ let audio_player = {
             flashVersion: 9,
             onready: function() {
                 audio_player.sound = soundManager.createSound({url: 'assets/audio/arifaina.mp4', volume: 80});
-            },
-            // restart on finish
-            onfinish: () => { 
-                if (audio_player.sound) { audio_player.sound.play(); } 
             },
             // prompt on error
             ontimeout: () => { console.log("Failed to play audio"); }
