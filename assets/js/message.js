@@ -65,7 +65,7 @@ function iteratePage(next_page) {
 }
 
 function updateMessages() {
-    fetch(10).then((docs) => {
+    fetch(30).then((docs) => {
         let index = 0;
     
         cur_page = index;
